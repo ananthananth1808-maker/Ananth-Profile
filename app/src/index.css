@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #121010;
+    --bg-elevated: #252424;
+    --text: #ffffff;
+    --text-secondary: #c1c0b4;
+    --text-muted: #646460;
+    --accent: #ff0000;
+    --card: #282828;
+    --radius: 0.5rem;
+  }
+
+  [data-theme="light"] {
+    --bg: #f4f4f4;
+    --bg-elevated: #ffffff;
+    --text: #000000;
+    --text-secondary: #555555;
+    --text-muted: #999999;
+    --accent: #ff0000;
+    --card: #ffffff;
+  }
+
+  [data-theme="vibrant"] {
+    --bg: #ff0000;
+    --bg-elevated: #cc0000;
+    --text: #ffffff;
+    --text-secondary: #ffeaea;
+    --text-muted: #ffcccc;
+    --accent: #000000;
+    --card: #e60000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .shimmer-text {
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .shimmer-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, var(--accent), transparent);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
