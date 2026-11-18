@@ -163,7 +163,7 @@ export default function Hero() {
               className="text-sm font-medium uppercase tracking-widest mb-4 theme-transition"
               style={{ color: 'var(--text-muted)' }}
             >
-              Frontend Engineer
+              FullStack Engineer
             </p>
             <h1
               className="font-bold leading-none tracking-tight theme-transition"

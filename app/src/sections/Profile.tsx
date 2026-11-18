@@ -77,7 +77,7 @@ export default function Profile() {
               }}
             >
               <img
-                src="/images/profile.jpeg"
+                src="/images/profile.png"
                 alt="Ananth A"
                 className="w-full h-full object-cover"
                 style={{
@@ -114,26 +114,11 @@ export default function Profile() {
               className="text-base md:text-lg leading-relaxed theme-transition"
               style={{ color: 'var(--text-secondary)' }}
             >
-              I'm a frontend engineer passionate about bridging the gap between sophisticated
-              design and high-performance code. With 7+ years of experience in React, WebGL,
-              and animation libraries, I transform static mockups into living, breathing
-              digital experiences.
+              I specialize in building modern, responsive, and user-friendly web applications using technologies like React.js, JavaScript, HTML, CSS, Node.js, and Java. I'm also exploring AI-powered applications and continuously improving my problem-solving and development skills.
+
+I enjoy learning new technologies, building innovative projects, and solving real-world problems through code.
             </p>
-            <div className="flex flex-wrap gap-4 mt-4">
-              {['React', 'TypeScript', 'WebGL', 'Node.js', 'Three.js'].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 text-sm font-medium rounded-full theme-transition"
-                  style={{
-                    backgroundColor: 'var(--card)',
-                    color: 'var(--text-secondary)',
-                    border: '1px solid var(--text-muted)',
-                  }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+           
           </div>
         </div>
       </div>

@@ -9,13 +9,13 @@ interface TechSkill {
 
 const skills: TechSkill[] = [
   { name: 'React', level: 0.95 },
-  { name: 'TypeScript', level: 0.9 },
-  { name: 'Three.js', level: 0.85 },
+  { name: 'Javascript', level: 0.9 },
+  { name: 'Tailwind CSS', level: 0.85 },
   { name: 'Node.js', level: 0.8 },
-  { name: 'WebGL', level: 0.85 },
-  { name: 'Next.js', level: 0.9 },
-  { name: 'GSAP', level: 0.88 },
-  { name: 'Figma', level: 0.75 },
+  {name: 'Mongodb' , level:0.7},
+  {name: 'Express.js', level: 0.8},
+  { name: 'Java', level: 0.75 },
+  { name: 'Graphic Design', level: 0.7 }
 ];
 
 export default function TechRadar() {

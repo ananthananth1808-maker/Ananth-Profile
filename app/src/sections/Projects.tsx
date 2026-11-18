@@ -11,6 +11,7 @@ interface Project {
   category: string;
   image: string;
   description: string;
+  repositoryUrl: string;
 }
 
 const projects: Project[] = [
@@ -18,19 +19,22 @@ const projects: Project[] = [
     name: 'Quantx Technologies',
     category: 'FINTECH DASHBOARD',
     image: '/images/project-fintech.jpg',
-    description: 'Real-time financial analytics platform',
+    description: 'Real-time Training Platform Dashboard',
+    repositoryUrl: 'https://github.com/ananthananth1808-maker/quantyx-landing-page',
   },
   {
     name: 'ParkPal Smartfind',
     category: 'WEBGL EXPERIENCE',
     image: '/images/project-visualizer.jpg',
-    description: 'Audio-reactive 3D visualization',
+    description: 'Real Time Locating Parking Lots in Cities',
+    repositoryUrl: 'https://github.com/asabishek/parkpal-smartfind',
   },
   {
     name: 'E-Commerce App',
     category: 'E-COMMERCE APP',
     image: '/images/project-ecommerce.jpg',
     description: 'Modern mobile shopping experience',
+    repositoryUrl: 'https://github.com/ananthananth1808-maker/SportSpot',
   },
 ];
 
@@ -136,18 +140,21 @@ export default function Projects() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-8">
-                    <button
-                      className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full theme-transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+                  <div className="flex flex-col items-end gap-3 md:flex-row md:items-center md:gap-8">
+                    <a
+                      href={project.repositoryUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.name} GitHub repository`}
+                      className="flex items-center gap-2 px-3 py-2 md:px-4 text-xs md:text-sm font-medium rounded-full theme-transition"
                       style={{
-                        backgroundColor: 'var(--accent)',
-                        color: theme === 'light' ? '#ffffff' : 'var(--bg)',
-                        transition: 'opacity 0.3s ease, transform 0.3s ease',
+                        backgroundColor: 'var(--a)',
+                        color: theme === 'dark' ? 'blue' : 'var(--bg)',
                       }}
                     >
-                      View Project
+                      View Repository
                       <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    </a>
                     <span
                       className="text-xs md:text-sm font-medium uppercase tracking-wider theme-transition"
                       style={{ color: 'var(--text-muted)' }}
@@ -167,7 +174,7 @@ export default function Projects() {
                         ? 'translateY(-50%) scale(1)'
                         : 'translateY(-50%) scale(0.9)',
                     transition: 'opacity 0.4s ease, transform 0.4s ease',
-                    zIndex: 20,
+                    zIndex: 0,
                   }}
                 >
                   <img

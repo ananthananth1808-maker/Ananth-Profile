@@ -249,17 +249,34 @@ export default function Footer() {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              <div className="flex flex-col gap-6">
+              <form
+                className="flex flex-col gap-6"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  const formData = new FormData(event.currentTarget);
+                  const name = String(formData.get('name'));
+                  const email = String(formData.get('email'));
+                  const message = String(formData.get('message'));
+                  const subject = `Portfolio inquiry from ${name}`;
+                  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+                  window.location.href = `mailto:ananthananth1808@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                }}
+              >
                 <div>
                   <label
+                    htmlFor="contact-name"
                     className="block text-xs font-medium uppercase tracking-wider mb-2 theme-transition"
                     style={{ color: 'var(--text-muted)' }}
                   >
                     Name
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     placeholder="Your name"
+                    required
                     className="w-full px-4 py-3 rounded-lg outline-none theme-transition"
                     style={{
                       backgroundColor: 'var(--bg-elevated)',
@@ -270,14 +287,18 @@ export default function Footer() {
                 </div>
                 <div>
                   <label
+                    htmlFor="contact-email"
                     className="block text-xs font-medium uppercase tracking-wider mb-2 theme-transition"
                     style={{ color: 'var(--text-muted)' }}
                   >
                     Email
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
                     placeholder="your@email.com"
+                    required
                     className="w-full px-4 py-3 rounded-lg outline-none theme-transition"
                     style={{
                       backgroundColor: 'var(--bg-elevated)',
@@ -288,14 +309,18 @@ export default function Footer() {
                 </div>
                 <div>
                   <label
+                    htmlFor="contact-message"
                     className="block text-xs font-medium uppercase tracking-wider mb-2 theme-transition"
                     style={{ color: 'var(--text-muted)' }}
                   >
                     Message
                   </label>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     rows={4}
                     placeholder="Tell me about your project..."
+                    required
                     className="w-full px-4 py-3 rounded-lg outline-none resize-none theme-transition"
                     style={{
                       backgroundColor: 'var(--bg-elevated)',
@@ -305,6 +330,7 @@ export default function Footer() {
                   />
                 </div>
                 <button
+                  type="submit"
                   className="flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-full theme-transition hover:scale-105 active:scale-95"
                   style={{
                     backgroundColor: 'var(--accent)',
@@ -314,7 +340,7 @@ export default function Footer() {
                   SEND SIGNAL
                   <Send className="w-4 h-4" />
                 </button>
-              </div>
+              </form>
             </div>
 
             {/* Links */}
@@ -330,7 +356,7 @@ export default function Footer() {
                   {[
                     { icon: Mail, label: 'ananthananth1808@gmail.com', href: 'mailto:ananthananth1808@gmail.com' },
                     { icon: Github, label: 'https://github.com/ananthananth1808-maker', href: '#' },
-                    { icon: Linkedin, label: 'linkedin.com/in/ananthananth1808', href: '#' },
+                    { icon: Linkedin, label: 'linkedin.com/in/ananth-a-153b57376', href: '#' },
                   ].map((link) => (
                     <a
                       key={link.label}
@@ -352,7 +378,7 @@ export default function Footer() {
                   className="text-xs theme-transition"
                   style={{ color: 'var(--text-muted)' }}
                 >
-                  &copy; 2026 ANANTH A. Built with React, Three.js & passion.
+                  &copy; 2026 ANANTH A. copyright.
                 </p>
               </div>
             </div>
